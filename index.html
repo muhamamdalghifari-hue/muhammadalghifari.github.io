@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Muhammad Al - Ghifari | Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172b4d;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            color: #1479e8;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #172b4d;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #1479e8;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 520px;
+            background: #f1f7ff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 7%;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hello {
+            color: #1479e8;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .job {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            color: #60728d;
+            font-size: 18px;
+            max-width: 550px;
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-info span {
+            font-size: 17px;
+        }
+
+        .hero-photo {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #dcecff;
+            flex-shrink: 0;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            font-size: 35px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: "";
+            display: block;
+            width: 45px;
+            height: 5px;
+            background: #1479e8;
+            margin-bottom: 12px;
+        }
+
+        /* ABOUT */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: #60728d;
+            font-size: 18px;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #f1f7ff;
+            padding: 25px 15px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(20,121,232,0.12);
+        }
+
+        .skill-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card h3 {
+            font-size: 18px;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: #f1f7ff;
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .contact p {
+            color: #60728d;
+            font-size: 18px;
+        }
+
+        .contact-box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            background: #dcecff;
+            color: #1479e8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        .contact-item small {
+            display: block;
+            color: #60728d;
+        }
+
+        .contact-item strong {
+            font-size: 17px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #ffffff;
+            color: #60728d;
+            border-top: 1px solid #eee;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .menu {
+                gap: 15px;
+            }
+
+            .menu a {
+                font-size: 14px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 50px 5%;
+            }
+
+            .hero-photo {
+                width: 280px;
+                height: 280px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .job {
+                font-size: 23px;
+            }
+
+            .contact-info {
+                align-items: center;
+            }
+
+            .about,
+            .contact {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .menu {
+                display: none;
+            }
+
+            .logo {
+                margin: auto;
+            }
+
+            .hero-photo {
+                width: 230px;
+                height: 230px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .skill-card {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">&lt;/&gt;</div>
+            Muhammad Al - Ghifari
+        </div>
+
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <div class="hello">
+                Hello, I'm
+            </div>
+
+            <h1>
+                Muhammad Al - Ghifari
+            </h1>
+
+            <div class="job">
+                Web Developer
+            </div>
+
+            <p class="description">
+                Saya seorang developer yang memiliki minat
+                dalam pengembangan website dan teknologi digital.
+                Saya senang membuat website yang sederhana,
+                modern, dan mudah digunakan.
+            </p>
+
+            <div class="contact-info">
+                <span>📧 &nbsp; muhamamdalghifari@gmail.com</span>
+                <span>📱 &nbsp; 089513316314</span>
+            </div>
+
+        </div>
+
+
+        <!-- FOTO -->
+        <div class="hero-photo">
+             <img src="foto.jpeg" alt="Muhammad Al - Ghifari">
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT + SKILLS -->
+    <section id="about">
+
+        <div class="about">
+
+            <!-- ABOUT -->
+            <div class="about-text">
+
+                <h2 class="section-title">
+                    About Me
+                </h2>
+
+                <p>
+                    Saya adalah seorang developer yang tertarik
+                    dengan dunia teknologi dan pengembangan website.
+                    Saya terus mengembangkan kemampuan dalam
+                    membuat aplikasi dan website yang bermanfaat.
+                </p>
+
+                <br>
+
+                <p>
+                    Saya memiliki semangat untuk mempelajari
+                    teknologi baru dan mengembangkan solusi
+                    digital yang sederhana dan efektif.
+                </p>
+
+            </div>
+
+
+            <!-- SKILLS -->
+            <div id="skills">
+
+                <h2 class="section-title">
+                    Skills
+                </h2>
+
+                <div class="skills">
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🌐</div>
+                        <h3>HTML</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <h3>CSS</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">⚡</div>
+                        <h3>JavaScript</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🐘</div>
+                        <h3>PHP</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🗄️</div>
+                        <h3>MySQL</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <h3>Figma</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+
+        <div class="contact">
+
+            <div>
+
+                <h2 class="section-title">
+                    Contact
+                </h2>
+
+                <p>
+                    Jika ada pertanyaan atau ingin berkolaborasi,
+                    silakan hubungi saya melalui kontak berikut.
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ✉
+                    </div>
+
+                    <div>
+                        <small>Email</small>
+                        <strong>
+                            muhamamdalghifari@gmail.com
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ☎
+                    </div>
+
+                    <div>
+                        <small>WhatsApp</small>
+                        <strong>
+                            089513316314
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026 Muhammad Al - Ghifari.
+        All Rights Reserved.
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // Efek sederhana saat halaman dibuka
+        window.addEventListener("load", function() {
+            console.log("Portfolio Muhammad Al - Ghifari berhasil dimuat.");
+        });
+
+    </script>
+
+</body>
+</html>
